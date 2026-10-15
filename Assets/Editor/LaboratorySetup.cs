@@ -12,7 +12,7 @@ public static class LaboratorySetup
         if (System.IO.File.Exists("Assets/00_Scenes/MainScene.unity")) return;
 
         EditorSettings.serializationMode = SerializationMode.ForceText;
-        EditorSettings.externalVersionControl = "Visible Meta Files";
+        VersionControlSettings.mode = "Visible Meta Files";
         var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
         EditorSceneManager.SaveScene(scene, "Assets/00_Scenes/MainScene.unity");
         EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene("Assets/00_Scenes/MainScene.unity", true) };
@@ -20,4 +20,5 @@ public static class LaboratorySetup
         Debug.Log("Laboratorio: MainScene creada. Caso 01 pendiente de Git y evidencias.");
     }
 }
+
 
