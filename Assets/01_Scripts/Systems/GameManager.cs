@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this; startTime = Time.time; messageUntil = Time.time + 12;
         Initialize(); // variante A
+        Initialize(); // variante B
     }
     public void ShowMessage(string text) { message = text; messageUntil = Time.time + 6; }
     public void ObtainKey() { HasKey = true; ShowMessage("Llave obtenida. Ya puedes abrir la salida."); }
