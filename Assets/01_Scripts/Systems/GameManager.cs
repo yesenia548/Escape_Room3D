@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this; startTime = Time.time; messageUntil = Time.time + 12;
-        // LAB_INITIALIZE
+        Initialize(); // variante A
     }
     public void ShowMessage(string text) { message = text; messageUntil = Time.time + 6; }
     public void ObtainKey() { HasKey = true; ShowMessage("Llave obtenida. Ya puedes abrir la salida."); }
