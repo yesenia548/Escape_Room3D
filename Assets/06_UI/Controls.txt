@@ -1,0 +1,8 @@
+ESCAPE ROOM
+WASD: mover
+Mouse: mirar
+E: interactuar
+Esc: liberar cursor
+Codigo: 1234
+Flujo: pista > panel > cofre > llave > puerta > cruzar salida.
+Interfaz: GameManager.OnGUI, escala de referencia 1280x720.
