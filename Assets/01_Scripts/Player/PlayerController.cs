@@ -38,3 +38,5 @@ public class PlayerController : MonoBehaviour
     }
     void OnDisable() { Cursor.lockState = CursorLockMode.None; Cursor.visible = true; }
 }
+
+// Movimiento documentado en laboratorio.

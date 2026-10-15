@@ -39,3 +39,5 @@ Assets generados y compilados en Unity. MainScene ejecutada en Play. Prueba auto
 ## Evidencias
 Registrar problema, proceso, solucion y prueba real para cada caso. No marcar como finalizado un caso sin su punto de control.
 
+
+Movimiento documentado durante caso 12.
