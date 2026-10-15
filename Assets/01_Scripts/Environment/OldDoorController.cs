@@ -1,2 +1,2 @@
 using UnityEngine;
-public class OldDoorController : MonoBehaviour { public float legacySpeed = 1f; }
+public class OldDoorController : MonoBehaviour { public float legacySpeed = 2f; }
