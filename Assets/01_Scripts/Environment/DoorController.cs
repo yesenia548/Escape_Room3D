@@ -7,7 +7,7 @@ public class DoorController : MonoBehaviour, IInteractable
     public string Prompt => "Abrir puerta de salida";
     public void Interact()
     {
-        if (!GameManager.Instance.HasKey) { GameManager.Instance.ShowMessage("Necesitas la llave del cofre."); return; }
+        if (GameManager.Instance.HasKey) { GameManager.Instance.ShowMessage("Necesitas la llave del cofre."); return; }
         open = true;
         GameManager.Instance.ShowMessage("Puerta abierta. Cruza el umbral para escapar.");
     }
