@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerInteraction : MonoBehaviour
 {
     public Camera playerCamera;
-    public float interactionDistance = 3f;
+    public float interactionDistance = 4f;
     void Update()
     {
         var game = GameManager.Instance;
