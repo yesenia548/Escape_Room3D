@@ -1,0 +1,25 @@
+CASO 14 - Feature desactualizada
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git merge-base --is-ancestor Dev HEAD
+[exit=1]
+
+$ git merge --no-ff Dev -m merge: update puzzle feature from Dev
+Merge made by the 'ort' strategy.
+ LAB_CAMBIO_A.md | 1 +
+ LAB_CAMBIO_B.md | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 LAB_CAMBIO_A.md
+ create mode 100644 LAB_CAMBIO_B.md
+[exit=0]
+
+$ git merge-base --is-ancestor Dev HEAD
+[exit=0]
+
+$ git status --short --branch
+## Feature_Puzzle
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

@@ -1,0 +1,78 @@
+CASO 13 - Archivo tracked e ignore
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: track generated laboratory file
+[Dev 44c8c9e] test: track generated laboratory file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TempLaboratorio/generated.log
+[exit=0]
+
+$ git ls-files TempLaboratorio
+TempLaboratorio/generated.log
+[exit=0]
+
+$ git diff -- .gitignore
+diff --git a/.gitignore b/.gitignore
+index 6663a05..0390201 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -23,3 +23,5 @@ Recordings/
+ .DS_Store
+ Thumbs.db
+ sysinfo.txt
++
++TempLaboratorio/
+[exit=0]
+
+=== FINISH ===
+$ git rm --cached TempLaboratorio/generated.log
+rm 'TempLaboratorio/generated.log'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m chore: fix ignored files
+[Dev 6f783b3] chore: fix ignored files
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ delete mode 100644 TempLaboratorio/generated.log
+[exit=0]
+
+$ git ls-files TempLaboratorio
+
+[exit=0]
+
+$ git check-ignore TempLaboratorio/generated.log
+TempLaboratorio/generated.log
+[exit=0]
+
+VERIFICADO: archivo local conservado, fuera del indice.
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* 6f783b3 (HEAD -> Dev) chore: fix ignored files
+* 44c8c9e test: track generated laboratory file
+* eeebe72 fix: remove unrelated test file
+* 49d8595 feat: update player and docs
+*   66515c4 merge: preserve both project labels
+|\  
+| * c0f1229 (Lab_Caso11_B) chore: set game product name
+* |   02e97ed merge: project company label
+|\ \  
+| |/  
+|/|
+[exit=0]

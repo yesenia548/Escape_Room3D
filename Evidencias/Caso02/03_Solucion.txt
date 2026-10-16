@@ -1,0 +1,47 @@
+CASO 02 - Ramas Dev y Feature
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git branch -m Feature_Animation Lab_Caso02_BaseMain
+
+[exit=0]
+
+$ git branch Feature_Animation Dev
+
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_PlayerMovement
+
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Interaction
+
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Puzzle
+
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Animation
+
+[exit=0]
+
+$ git branch -v
+* Dev                    cf06cd7 docs: define development branch
+  Feature_Animation      cf06cd7 docs: define development branch
+  Feature_Interaction    cf06cd7 docs: define development branch
+  Feature_PlayerMovement cf06cd7 docs: define development branch
+  Feature_Puzzle         cf06cd7 docs: define development branch
+  Lab_Caso02_BaseMain    51866ae chore: initial Unity project
+  main                   51866ae chore: initial Unity project
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* cf06cd7 (HEAD -> Dev, Feature_Puzzle, Feature_PlayerMovement, Feature_Interaction, Feature_Animation) docs: define development branch
+* 51866ae (main, Lab_Caso02_BaseMain) chore: initial Unity project
+[exit=0]

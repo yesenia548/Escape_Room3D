@@ -1,0 +1,53 @@
+CASO 11 - Diff de ProjectSettings
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: preserve both project labels
+[Dev 66515c4] merge: preserve both project labels
+[exit=0]
+
+$ git diff HEAD~2..HEAD -- ProjectSettings/ProjectSettings.asset
+diff --git a/ProjectSettings/ProjectSettings.asset b/ProjectSettings/ProjectSettings.asset
+index 37fe520..2924cde 100644
+--- a/ProjectSettings/ProjectSettings.asset
++++ b/ProjectSettings/ProjectSettings.asset
+@@ -12,8 +12,8 @@ PlayerSettings:
+   targetDevice: 2
+   useOnDemandResources: 0
+   accelerometerFrequency: 60
+-  companyName: DefaultCompany
+-  productName: EscapeRoom3D
++  companyName: Equipo Escape Room
++  productName: Escape Room 3D
+   defaultCursor: {fileID: 0}
+   cursorHotspot: {x: 0, y: 0}
+   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   66515c4 (HEAD -> Dev) merge: preserve both project labels
+|\  
+| * c0f1229 (Lab_Caso11_B) chore: set game product name
+* |   02e97ed merge: project company label
+|\ \  
+| |/  
+|/|   
+| * 05bbe2c (Lab_Caso11_A) chore: set team project label
+|/  
+*   4fd6b41 merge: retain coherent puzzle validation
+|\  
+| * 13449ca (Lab_Caso10_B) feat: puzzle implementation B
+* |   2facd94 merge: puzzle A
+|\ \  
+| |/  
+|/|
+[exit=0]

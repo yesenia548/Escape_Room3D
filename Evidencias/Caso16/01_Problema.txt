@@ -1,0 +1,97 @@
+CASO 16 - Inicializacion duplicada
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: prepare initialization conflict
+[Dev 552e190] test: prepare initialization conflict
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch Lab_Caso16_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso16_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso16_A
+Switched to branch 'Lab_Caso16_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 16 variant A
+[Lab_Caso16_A fc4d228] test: case 16 variant A
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Lab_Caso16_B
+Switched to branch 'Lab_Caso16_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 16 variant B
+[Lab_Caso16_B 17a4d79] test: case 16 variant B
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso16_A -m merge: case 16 variant A
+Merge made by the 'ort' strategy.
+ Assets/01_Scripts/Systems/GameManager.cs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git merge --no-ff Lab_Caso16_B -m merge: case 16 variant B
+Auto-merging Assets/01_Scripts/Systems/GameManager.cs
+CONFLICT (content): Merge conflict in Assets/01_Scripts/Systems/GameManager.cs
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git diff --name-only --diff-filter=U
+Assets/01_Scripts/Systems/GameManager.cs
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/01_Scripts/Systems/GameManager.cs
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   c7b6ecd (HEAD -> Dev) merge: case 16 variant A
+|\  
+| * fc4d228 (Lab_Caso16_A) test: case 16 variant A
+|/  
+* 552e190 test: prepare initialization conflict
+*   3be62b6 merge: resolve script prefab and scene together
+|\  
+| * 7a4d37d (Lab_Caso15_B) test: case 15 variant B
+* |   bd43928 merge: case 15 variant A
+|\ \  
+| |/  
+|/|   
+| * 1700d53 (Lab_Caso15_A) test: case 15 variant A
+|/
+[exit=0]

@@ -1,0 +1,103 @@
+CASO 10 - Add/Add
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git rm Assets/01_Scripts/Puzzle/PuzzleManager.cs Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta
+rm 'Assets/01_Scripts/Puzzle/PuzzleManager.cs'
+rm 'Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: prepare add add puzzle exercise
+[Dev 3a4301f] test: prepare add add puzzle exercise
+ 2 files changed, 24 deletions(-)
+ delete mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs
+ delete mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta
+[exit=0]
+
+$ git branch Lab_Caso10_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso10_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso10_A
+Switched to branch 'Lab_Caso10_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m feat: puzzle implementation A
+[Lab_Caso10_A 575b3df] feat: puzzle implementation A
+ 2 files changed, 24 insertions(+)
+ create mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs
+ create mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta
+[exit=0]
+
+$ git switch Lab_Caso10_B
+Switched to branch 'Lab_Caso10_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m feat: puzzle implementation B
+[Lab_Caso10_B 13449ca] feat: puzzle implementation B
+ 2 files changed, 24 insertions(+)
+ create mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs
+ create mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso10_A -m merge: puzzle A
+Merge made by the 'ort' strategy.
+ Assets/01_Scripts/Puzzle/PuzzleManager.cs      | 22 ++++++++++++++++++++++
+ Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta |  2 ++
+ 2 files changed, 24 insertions(+)
+ create mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs
+ create mode 100644 Assets/01_Scripts/Puzzle/PuzzleManager.cs.meta
+[exit=0]
+
+$ git merge Lab_Caso10_B
+Auto-merging Assets/01_Scripts/Puzzle/PuzzleManager.cs
+CONFLICT (add/add): Merge conflict in Assets/01_Scripts/Puzzle/PuzzleManager.cs
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git status --short --branch
+## Dev
+AA Assets/01_Scripts/Puzzle/PuzzleManager.cs
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   2facd94 (HEAD -> Dev) merge: puzzle A
+|\  
+| * 575b3df (Lab_Caso10_A) feat: puzzle implementation A
+|/  
+* 3a4301f test: prepare add add puzzle exercise
+*   5750edd merge: keep replacement DoorController
+|\  
+| * 6b8f4e5 (Lab_Caso09_B) fix: update old door controller
+* |   c3302ad merge: remove obsolete controller
+|\ \  
+| |/  
+|/|   
+| * 4339c48 (Lab_Caso09_A) refactor: remove old door controller
+|/
+[exit=0]

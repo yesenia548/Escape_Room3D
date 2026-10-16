@@ -1,0 +1,92 @@
+CASO 19 - Cherry-pick selectivo
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch -m Feature_Puzzle Lab_Caso14_UpdatedFeature
+
+[exit=0]
+
+$ git switch -c Feature_Puzzle
+Switched to a new branch 'Feature_Puzzle'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: add puzzle feature roadmap
+[Feature_Puzzle d82622d] docs: add puzzle feature roadmap
+ 1 file changed, 1 insertion(+)
+ create mode 100644 FEATURE_ROADMAP.md
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m fix: correct puzzle validation
+[Feature_Puzzle 3f0fc31] fix: correct puzzle validation
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git rev-parse HEAD
+3f0fc3179239a2b00e0c2b229bfb41ca5d5ca072
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: record puzzle work in progress
+[Feature_Puzzle b2e1838] docs: record puzzle work in progress
+ 1 file changed, 1 insertion(+)
+ create mode 100644 FEATURE_WIP.md
+[exit=0]
+
+$ git log -3 --oneline
+b2e1838 docs: record puzzle work in progress
+3f0fc31 fix: correct puzzle validation
+d82622d docs: add puzzle feature roadmap
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+=== FINISH ===
+$ git cherry-pick 3f0fc3179239a2b00e0c2b229bfb41ca5d5ca072
+[Dev de06f72] fix: correct puzzle validation
+ Date: Thu Oct 15 13:22:09 2026 -0400
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git show --stat --oneline HEAD
+de06f72 fix: correct puzzle validation
+ Assets/01_Scripts/Puzzle/PuzzleManager.cs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+VERIFICADO: se aplico solo el fix. Los otros dos commits no se integraron.
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* de06f72 (HEAD -> Dev) fix: correct puzzle validation
+* ffc9b01 Revert "test: introduce door regression"
+* ca7b429 test: introduce door regression
+* 1f7859a fix: initialize game only once
+*   a7b66be test: reproduce duplicate initialization
+|\  
+| * 17a4d79 (Lab_Caso16_B) test: case 16 variant B
+* |   c7b6ecd merge: case 16 variant A
+|\ \  
+| |/  
+|/|
+[exit=0]

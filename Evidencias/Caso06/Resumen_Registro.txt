@@ -1,0 +1,25 @@
+CASO 06 - Conflicto en script
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git merge --no-ff Lab_Caso06_B -m merge: case 06 variant B
+Auto-merging Assets/01_Scripts/Player/PlayerController.cs
+CONFLICT (content): Merge conflict in Assets/01_Scripts/Player/PlayerController.cs
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git diff --name-only --diff-filter=U
+Assets/01_Scripts/Player/PlayerController.cs
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/01_Scripts/Player/PlayerController.cs
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

@@ -1,0 +1,26 @@
+CASO 15 - Conflictos multiples
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git diff --name-only --diff-filter=U
+Assets/00_Scenes/MainScene.unity
+Assets/01_Scripts/Player/PlayerController.cs
+Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/00_Scenes/MainScene.unity
+UU Assets/01_Scripts/Player/PlayerController.cs
+UU Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git diff --name-only --diff-filter=U
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

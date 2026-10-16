@@ -1,0 +1,32 @@
+CASO 10 - Add/Add
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: retain coherent puzzle validation
+[Dev 4fd6b41] merge: retain coherent puzzle validation
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   4fd6b41 (HEAD -> Dev) merge: retain coherent puzzle validation
+|\  
+| * 13449ca (Lab_Caso10_B) feat: puzzle implementation B
+* |   2facd94 merge: puzzle A
+|\ \  
+| |/  
+|/|   
+| * 575b3df (Lab_Caso10_A) feat: puzzle implementation A
+|/  
+* 3a4301f test: prepare add add puzzle exercise
+*   5750edd merge: keep replacement DoorController
+|\  
+| * 6b8f4e5 (Lab_Caso09_B) fix: update old door controller
+[exit=0]

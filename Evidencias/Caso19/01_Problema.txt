@@ -1,0 +1,59 @@
+CASO 19 - Cherry-pick selectivo
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch -m Feature_Puzzle Lab_Caso14_UpdatedFeature
+
+[exit=0]
+
+$ git switch -c Feature_Puzzle
+Switched to a new branch 'Feature_Puzzle'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: add puzzle feature roadmap
+[Feature_Puzzle d82622d] docs: add puzzle feature roadmap
+ 1 file changed, 1 insertion(+)
+ create mode 100644 FEATURE_ROADMAP.md
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m fix: correct puzzle validation
+[Feature_Puzzle 3f0fc31] fix: correct puzzle validation
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git rev-parse HEAD
+3f0fc3179239a2b00e0c2b229bfb41ca5d5ca072
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: record puzzle work in progress
+[Feature_Puzzle b2e1838] docs: record puzzle work in progress
+ 1 file changed, 1 insertion(+)
+ create mode 100644 FEATURE_WIP.md
+[exit=0]
+
+$ git log -3 --oneline
+b2e1838 docs: record puzzle work in progress
+3f0fc31 fix: correct puzzle validation
+d82622d docs: add puzzle feature roadmap
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]

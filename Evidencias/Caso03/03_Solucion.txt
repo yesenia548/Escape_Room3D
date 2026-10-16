@@ -1,0 +1,34 @@
+CASO 03 - Commit en rama equivocada
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git branch -f Feature_PlayerMovement Dev
+
+[exit=0]
+
+$ git switch Feature_PlayerMovement
+Switched to branch 'Feature_PlayerMovement'
+[exit=0]
+
+$ git branch -f Dev cf06cd784d47b64b872535d3ffa1c7224c4870bb
+
+[exit=0]
+
+$ git log Dev -1 --oneline
+cf06cd7 docs: define development branch
+[exit=0]
+
+$ git log Feature_PlayerMovement -1 --oneline
+e626539 feat: add player movement
+[exit=0]
+
+$ git status --short --branch
+## Feature_PlayerMovement
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* e626539 (HEAD -> Feature_PlayerMovement) feat: add player movement
+* cf06cd7 (Feature_Puzzle, Feature_Interaction, Feature_Animation, Dev) docs: define development branch
+* 51866ae (main, Lab_Caso02_BaseMain) chore: initial Unity project
+[exit=0]

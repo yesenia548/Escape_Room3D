@@ -1,0 +1,35 @@
+CASO 13 - Archivo tracked e ignore
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: track generated laboratory file
+[Dev 44c8c9e] test: track generated laboratory file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 TempLaboratorio/generated.log
+[exit=0]
+
+$ git ls-files TempLaboratorio
+TempLaboratorio/generated.log
+[exit=0]
+
+$ git diff -- .gitignore
+diff --git a/.gitignore b/.gitignore
+index 6663a05..0390201 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -23,3 +23,5 @@ Recordings/
+ .DS_Store
+ Thumbs.db
+ sysinfo.txt
++
++TempLaboratorio/
+[exit=0]

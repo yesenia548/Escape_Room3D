@@ -1,0 +1,37 @@
+CASO 04 - Stash
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git switch Feature_PlayerMovement
+Already on 'Feature_PlayerMovement'
+[exit=0]
+
+$ git switch Feature_PlayerMovement
+error: Your local changes to the following files would be overwritten by checkout:
+	Assets/01_Scripts/Interaction/PlayerInteraction.cs
+Please commit your changes or stash them before you switch branches.
+Aborting
+[exit=1]
+
+$ git diff -- Assets/01_Scripts/Interaction/PlayerInteraction.cs
+diff --git a/Assets/01_Scripts/Interaction/PlayerInteraction.cs b/Assets/01_Scripts/Interaction/PlayerInteraction.cs
+index 667d8d0..720863c 100644
+--- a/Assets/01_Scripts/Interaction/PlayerInteraction.cs
++++ b/Assets/01_Scripts/Interaction/PlayerInteraction.cs
+@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
+ public class PlayerInteraction : MonoBehaviour
+ {
+     public Camera playerCamera;
+[...] Registro completo en Registro.txt.
+[exit=0]
+
+$ git stash push -m WIP interaction
+Saved working directory and index state On Feature_Interaction: WIP interaction
+[exit=0]
+
+$ git stash list
+stash@{0}: On Feature_Interaction: WIP interaction
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

@@ -1,0 +1,22 @@
+CASO 13 - Archivo ignorado y tracked
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git ls-files TempLaboratorio
+TempLaboratorio/generated.log
+[exit=0]
+
+$ git rm --cached TempLaboratorio/generated.log
+rm 'TempLaboratorio/generated.log'
+[exit=0]
+
+$ git ls-files TempLaboratorio
+[exit=0]
+
+$ git check-ignore TempLaboratorio/generated.log
+TempLaboratorio/generated.log
+[exit=0]
+VERIFICADO: archivo local conservado, fuera del indice.
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

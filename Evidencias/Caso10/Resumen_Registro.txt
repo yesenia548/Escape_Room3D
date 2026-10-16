@@ -1,0 +1,21 @@
+CASO 10 - Add/Add
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git merge Lab_Caso10_B
+Auto-merging Assets/01_Scripts/Puzzle/PuzzleManager.cs
+CONFLICT (add/add): Merge conflict in Assets/01_Scripts/Puzzle/PuzzleManager.cs
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git status --short --branch
+## Dev
+AA Assets/01_Scripts/Puzzle/PuzzleManager.cs
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

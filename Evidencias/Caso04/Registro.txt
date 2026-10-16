@@ -1,0 +1,158 @@
+CASO 04 - Stash y cambios locales
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Feature_PlayerMovement
+Already on 'Feature_PlayerMovement'
+[exit=0]
+
+=== FINISH ===
+$ git stash push -m WIP interaction
+No local changes to save
+[exit=0]
+
+$ git stash list
+
+[exit=0]
+
+$ git status --short
+
+[exit=0]
+
+$ git switch Feature_PlayerMovement
+Already on 'Feature_PlayerMovement'
+[exit=0]
+
+$ git switch Feature_Interaction
+Switched to branch 'Feature_Interaction'
+[exit=0]
+
+$ git stash apply
+No stash entries found.
+[exit=1]
+
+=== BEGIN ===
+$ git switch Feature_PlayerMovement
+Already on 'Feature_PlayerMovement'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m feat: tune interaction range
+[Feature_PlayerMovement 3f77a55] feat: tune interaction range
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Feature_Interaction
+Switched to branch 'Feature_Interaction'
+[exit=0]
+
+$ git switch Feature_PlayerMovement
+error: Your local changes to the following files would be overwritten by checkout:
+	Assets/01_Scripts/Interaction/PlayerInteraction.cs
+Please commit your changes or stash them before you switch branches.
+Aborting
+[exit=1]
+
+$ git diff -- Assets/01_Scripts/Interaction/PlayerInteraction.cs
+diff --git a/Assets/01_Scripts/Interaction/PlayerInteraction.cs b/Assets/01_Scripts/Interaction/PlayerInteraction.cs
+index 667d8d0..720863c 100644
+--- a/Assets/01_Scripts/Interaction/PlayerInteraction.cs
++++ b/Assets/01_Scripts/Interaction/PlayerInteraction.cs
+@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
+ public class PlayerInteraction : MonoBehaviour
+ {
+     public Camera playerCamera;
+-    public float interactionDistance = 3f;
++    public float interactionDistance = 2f;
+     void Update()
+     {
+         var game = GameManager.Instance;
+[exit=0]
+
+$ git status --short --branch
+## Feature_Interaction
+ M Assets/01_Scripts/Interaction/PlayerInteraction.cs
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* cf06cd7 (HEAD -> Feature_Interaction, Feature_Puzzle, Feature_Animation, Dev) docs: define development branch
+* 51866ae (main, Lab_Caso02_BaseMain) chore: initial Unity project
+[exit=0]
+
+=== FINISH ===
+$ git stash push -m WIP interaction
+Saved working directory and index state On Feature_Interaction: WIP interaction
+[exit=0]
+
+$ git stash list
+stash@{0}: On Feature_Interaction: WIP interaction
+[exit=0]
+
+$ git status --short
+
+[exit=0]
+
+$ git switch Feature_PlayerMovement
+Switched to branch 'Feature_PlayerMovement'
+[exit=0]
+
+$ git switch Feature_Interaction
+Switched to branch 'Feature_Interaction'
+[exit=0]
+
+$ git stash apply
+On branch Feature_Interaction
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Assets/01_Scripts/Interaction/PlayerInteraction.cs
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[exit=0]
+
+$ git diff -- Assets/01_Scripts/Interaction/PlayerInteraction.cs
+diff --git a/Assets/01_Scripts/Interaction/PlayerInteraction.cs b/Assets/01_Scripts/Interaction/PlayerInteraction.cs
+index 667d8d0..720863c 100644
+--- a/Assets/01_Scripts/Interaction/PlayerInteraction.cs
++++ b/Assets/01_Scripts/Interaction/PlayerInteraction.cs
+@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
+ public class PlayerInteraction : MonoBehaviour
+ {
+     public Camera playerCamera;
+-    public float interactionDistance = 3f;
++    public float interactionDistance = 2f;
+     void Update()
+     {
+         var game = GameManager.Instance;
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m feat: add interaction
+[Feature_Interaction 0475abb] feat: add interaction
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git stash list
+stash@{0}: On Feature_Interaction: WIP interaction
+[exit=0]
+
+$ git status --short --branch
+## Feature_Interaction
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* 0475abb (HEAD -> Feature_Interaction) feat: add interaction
+* cf06cd7 (Feature_Puzzle, Feature_Animation, Dev) docs: define development branch
+* 51866ae (main, Lab_Caso02_BaseMain) chore: initial Unity project
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]

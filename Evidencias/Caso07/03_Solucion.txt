@@ -1,0 +1,35 @@
+CASO 07 - Conflicto en prefab
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: preserve player prefab references
+[Dev 95d4734] merge: preserve player prefab references
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   95d4734 (HEAD -> Dev) merge: preserve player prefab references
+|\  
+| * b7a067e (Lab_Caso07_B) test: case 07 variant B
+* |   f38ca50 merge: case 07 variant A
+|\ \  
+| |/  
+|/|   
+| * 1ae65a3 (Lab_Caso07_A) test: case 07 variant A
+|/  
+*   cfb1829 merge: resolve player movement conflict
+|\  
+| * 695a201 (Lab_Caso06_B) test: case 06 variant B
+* |   5d32c68 merge: case 06 variant A
+|\ \  
+| |/  
+|/|
+[exit=0]

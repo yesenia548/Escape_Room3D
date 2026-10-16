@@ -1,0 +1,16 @@
+PRUEBA AUTOMATIZADA DE ESTADOS EN PLAY
+No sustituye la prueba manual de teclado, mouse y raycast.
+PASS: Referencias iniciales
+PASS: Initialize se ejecuta exactamente una vez
+PASS: Estado inicial bloqueado
+PASS: Cofre rechaza apertura sin codigo
+PASS: Puerta rechaza apertura sin llave
+PASS: Codigo incorrecto rechazado
+PASS: Codigo null rechazado sin excepcion
+PASS: Codigo valido con espacios aceptado
+PASS: Cofre abierto revela llave
+PASS: Llave entra al inventario
+PASS: Puerta se anima con llave
+PASS: Tapa del cofre se anima
+PASS: Trigger de salida completa el escape
+RESULTADO: PASS

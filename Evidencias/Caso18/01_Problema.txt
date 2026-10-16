@@ -1,0 +1,48 @@
+CASO 18 - Recuperacion por reflog
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git switch --detach Dev
+HEAD is now at ffc9b01 Revert "test: introduce door regression"
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: recovery point
+[detached HEAD 6127197] test: recovery point
+ 1 file changed, 1 insertion(+)
+ create mode 100644 RECOVERY_TEST.md
+[exit=0]
+
+$ git rev-parse HEAD
+6127197eac72923cadac202cfc3e073e99eeb761
+[exit=0]
+
+$ git switch Dev
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  6127197 test: recovery point
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 6127197
+
+Switched to branch 'Dev'
+[exit=0]
+
+$ git log -3 --oneline
+ffc9b01 Revert "test: introduce door regression"
+ca7b429 test: introduce door regression
+1f7859a fix: initialize game only once
+[exit=0]
+
+Commit fuera del historial visible de Dev: 6127197eac72923cadac202cfc3e073e99eeb761

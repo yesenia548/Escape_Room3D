@@ -1,0 +1,33 @@
+CASO 16 - Inicializacion duplicada
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+warning: in the working copy of 'ProjectSettings/ShaderGraphSettings.asset', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -m fix: initialize game only once
+[Dev 1f7859a] fix: initialize game only once
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* 1f7859a (HEAD -> Dev) fix: initialize game only once
+*   a7b66be test: reproduce duplicate initialization
+|\  
+| * 17a4d79 (Lab_Caso16_B) test: case 16 variant B
+* |   c7b6ecd merge: case 16 variant A
+|\ \  
+| |/  
+|/|   
+| * fc4d228 (Lab_Caso16_A) test: case 16 variant A
+|/  
+* 552e190 test: prepare initialization conflict
+*   3be62b6 merge: resolve script prefab and scene together
+|\
+[exit=0]

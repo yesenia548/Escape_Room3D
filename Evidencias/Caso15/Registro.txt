@@ -1,0 +1,121 @@
+CASO 15 - Conflictos multiples
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch Lab_Caso15_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso15_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso15_A
+Switched to branch 'Lab_Caso15_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 15 variant A
+[Lab_Caso15_A 1700d53] test: case 15 variant A
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+[exit=0]
+
+$ git switch Lab_Caso15_B
+Switched to branch 'Lab_Caso15_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 15 variant B
+[Lab_Caso15_B 7a4d37d] test: case 15 variant B
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso15_A -m merge: case 15 variant A
+Merge made by the 'ort' strategy.
+ Assets/00_Scenes/MainScene.unity             | 2 +-
+ Assets/01_Scripts/Player/PlayerController.cs | 2 +-
+ Assets/02_Prefabs/Player.prefab              | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+[exit=0]
+
+$ git merge --no-ff Lab_Caso15_B -m merge: case 15 variant B
+Auto-merging Assets/00_Scenes/MainScene.unity
+CONFLICT (content): Merge conflict in Assets/00_Scenes/MainScene.unity
+Auto-merging Assets/01_Scripts/Player/PlayerController.cs
+CONFLICT (content): Merge conflict in Assets/01_Scripts/Player/PlayerController.cs
+Auto-merging Assets/02_Prefabs/Player.prefab
+CONFLICT (content): Merge conflict in Assets/02_Prefabs/Player.prefab
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git diff --name-only --diff-filter=U
+Assets/00_Scenes/MainScene.unity
+Assets/01_Scripts/Player/PlayerController.cs
+Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/00_Scenes/MainScene.unity
+UU Assets/01_Scripts/Player/PlayerController.cs
+UU Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   bd43928 (HEAD -> Dev) merge: case 15 variant A
+|\  
+| * 1700d53 (Lab_Caso15_A) test: case 15 variant A
+|/  
+* 8bb227a docs: record development update B
+* d601c0f docs: record development update A
+* 6f783b3 chore: fix ignored files
+* 44c8c9e test: track generated laboratory file
+* eeebe72 fix: remove unrelated test file
+[exit=0]
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: resolve script prefab and scene together
+[Dev 3be62b6] merge: resolve script prefab and scene together
+[exit=0]
+
+$ git diff --name-only --diff-filter=U
+
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   3be62b6 (HEAD -> Dev) merge: resolve script prefab and scene together
+|\  
+| * 7a4d37d (Lab_Caso15_B) test: case 15 variant B
+* |   bd43928 merge: case 15 variant A
+|\ \  
+| |/  
+|/|   
+| * 1700d53 (Lab_Caso15_A) test: case 15 variant A
+|/  
+* 8bb227a docs: record development update B
+* d601c0f docs: record development update A
+* 6f783b3 chore: fix ignored files
+[exit=0]

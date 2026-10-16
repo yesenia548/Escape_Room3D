@@ -1,0 +1,43 @@
+CASO 08 - Conflicto en escena
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: preserve chest and door in scene
+[Dev 4ac55fb] merge: preserve chest and door in scene
+[exit=0]
+
+$ git grep -n m_Name: Chest\|m_Name: Door -- Assets/00_Scenes/MainScene.unity
+Assets/00_Scenes/MainScene.unity:135:  m_Name: DoorLeaf
+Assets/00_Scenes/MainScene.unity:1960:  m_Name: Door
+Assets/00_Scenes/MainScene.unity:2546:  m_Name: Chest
+Assets/00_Scenes/MainScene.unity:3007:  m_Name: DoorHinge
+Assets/00_Scenes/MainScene.unity:3997:  m_Name: DoorTop
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   4ac55fb (HEAD -> Dev) merge: preserve chest and door in scene
+|\  
+| * 149c737 (Lab_Caso08_B) test: case 08 variant B
+* |   b6daca1 merge: case 08 variant A
+|\ \  
+| |/  
+|/|   
+| * f815c46 (Lab_Caso08_A) test: case 08 variant A
+|/  
+*   95d4734 merge: preserve player prefab references
+|\  
+| * b7a067e (Lab_Caso07_B) test: case 07 variant B
+* |   f38ca50 merge: case 07 variant A
+|\ \  
+| |/  
+|/|
+[exit=0]

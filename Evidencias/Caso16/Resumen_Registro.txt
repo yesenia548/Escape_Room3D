@@ -1,0 +1,29 @@
+CASO 16 - Inicializacion duplicada
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git status --short --branch
+## Dev
+UU Assets/01_Scripts/Systems/GameManager.cs
+[exit=0]
+
+$ git grep -n Initialize(); -- Assets/01_Scripts/Systems/GameManager.cs
+Assets/01_Scripts/Systems/GameManager.cs:28:        Initialize(); // variante A
+Assets/01_Scripts/Systems/GameManager.cs:29:        Initialize(); // variante B
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git commit -m fix: initialize game only once
+[Dev 1f7859a] fix: initialize game only once
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

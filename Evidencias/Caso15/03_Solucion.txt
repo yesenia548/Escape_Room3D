@@ -1,0 +1,35 @@
+CASO 15 - Conflictos multiples
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: resolve script prefab and scene together
+[Dev 3be62b6] merge: resolve script prefab and scene together
+[exit=0]
+
+$ git diff --name-only --diff-filter=U
+
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   3be62b6 (HEAD -> Dev) merge: resolve script prefab and scene together
+|\  
+| * 7a4d37d (Lab_Caso15_B) test: case 15 variant B
+* |   bd43928 merge: case 15 variant A
+|\ \  
+| |/  
+|/|   
+| * 1700d53 (Lab_Caso15_A) test: case 15 variant A
+|/  
+* 8bb227a docs: record development update B
+* d601c0f docs: record development update A
+* 6f783b3 chore: fix ignored files
+[exit=0]

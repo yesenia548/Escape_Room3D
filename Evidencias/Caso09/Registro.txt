@@ -1,0 +1,137 @@
+CASO 09 - Delete/Modify
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: add legacy door controller
+[Dev 356bec9] test: add legacy door controller
+ 2 files changed, 4 insertions(+)
+ create mode 100644 Assets/01_Scripts/Environment/OldDoorController.cs
+ create mode 100644 Assets/01_Scripts/Environment/OldDoorController.cs.meta
+[exit=0]
+
+$ git branch Lab_Caso09_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso09_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso09_A
+Switched to branch 'Lab_Caso09_A'
+[exit=0]
+
+$ git rm Assets/01_Scripts/Environment/OldDoorController.cs Assets/01_Scripts/Environment/OldDoorController.cs.meta
+rm 'Assets/01_Scripts/Environment/OldDoorController.cs'
+rm 'Assets/01_Scripts/Environment/OldDoorController.cs.meta'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m refactor: remove old door controller
+[Lab_Caso09_A 4339c48] refactor: remove old door controller
+ 2 files changed, 4 deletions(-)
+ delete mode 100644 Assets/01_Scripts/Environment/OldDoorController.cs
+ delete mode 100644 Assets/01_Scripts/Environment/OldDoorController.cs.meta
+[exit=0]
+
+$ git switch Lab_Caso09_B
+Switched to branch 'Lab_Caso09_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m fix: update old door controller
+[Lab_Caso09_B 6b8f4e5] fix: update old door controller
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso09_A -m merge: remove obsolete controller
+Merge made by the 'ort' strategy.
+ Assets/01_Scripts/Environment/OldDoorController.cs      | 2 --
+ Assets/01_Scripts/Environment/OldDoorController.cs.meta | 2 --
+ 2 files changed, 4 deletions(-)
+ delete mode 100644 Assets/01_Scripts/Environment/OldDoorController.cs
+ delete mode 100644 Assets/01_Scripts/Environment/OldDoorController.cs.meta
+[exit=0]
+
+$ git merge Lab_Caso09_B
+CONFLICT (modify/delete): Assets/01_Scripts/Environment/OldDoorController.cs deleted in HEAD and modified in Lab_Caso09_B.  Version Lab_Caso09_B of Assets/01_Scripts/Environment/OldDoorController.cs left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git status --short --branch
+## Dev
+DU Assets/01_Scripts/Environment/OldDoorController.cs
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   c3302ad (HEAD -> Dev) merge: remove obsolete controller
+|\  
+| * 4339c48 (Lab_Caso09_A) refactor: remove old door controller
+|/  
+* 356bec9 test: add legacy door controller
+*   4ac55fb merge: preserve chest and door in scene
+|\  
+| * 149c737 (Lab_Caso08_B) test: case 08 variant B
+* |   b6daca1 merge: case 08 variant A
+|\ \  
+| |/  
+|/|   
+| * f815c46 (Lab_Caso08_A) test: case 08 variant A
+|/
+[exit=0]
+
+=== FINISH ===
+$ git rm Assets/01_Scripts/Environment/OldDoorController.cs
+rm 'Assets/01_Scripts/Environment/OldDoorController.cs'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: keep replacement DoorController
+[Dev 5750edd] merge: keep replacement DoorController
+[exit=0]
+
+$ git grep -n OldDoorController
+
+[exit=1]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   5750edd (HEAD -> Dev) merge: keep replacement DoorController
+|\  
+| * 6b8f4e5 (Lab_Caso09_B) fix: update old door controller
+* |   c3302ad merge: remove obsolete controller
+|\ \  
+| |/  
+|/|   
+| * 4339c48 (Lab_Caso09_A) refactor: remove old door controller
+|/  
+* 356bec9 test: add legacy door controller
+*   4ac55fb merge: preserve chest and door in scene
+|\  
+| * 149c737 (Lab_Caso08_B) test: case 08 variant B
+[exit=0]
