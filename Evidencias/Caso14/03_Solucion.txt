@@ -1,0 +1,37 @@
+CASO 14 - Feature desactualizada
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git merge --no-ff Dev -m merge: update puzzle feature from Dev
+Merge made by the 'ort' strategy.
+ LAB_CAMBIO_A.md | 1 +
+ LAB_CAMBIO_B.md | 1 +
+ 2 files changed, 2 insertions(+)
+ create mode 100644 LAB_CAMBIO_A.md
+ create mode 100644 LAB_CAMBIO_B.md
+[exit=0]
+
+$ git merge-base --is-ancestor Dev HEAD
+
+[exit=0]
+
+$ git status --short --branch
+## Feature_Puzzle
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   7601d1c (HEAD -> Feature_Puzzle) merge: update puzzle feature from Dev
+|\  
+| * 8bb227a (Dev) docs: record development update B
+| * d601c0f docs: record development update A
+* | 18ff7d2 docs: record puzzle feature work
+|/  
+* 6f783b3 chore: fix ignored files
+* 44c8c9e test: track generated laboratory file
+* eeebe72 fix: remove unrelated test file
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]

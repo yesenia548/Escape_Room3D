@@ -1,0 +1,84 @@
+CASO 07 - Conflicto en prefab
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch Lab_Caso07_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso07_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso07_A
+Switched to branch 'Lab_Caso07_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 07 variant A
+[Lab_Caso07_A 1ae65a3] test: case 07 variant A
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[exit=0]
+
+$ git switch Lab_Caso07_B
+Switched to branch 'Lab_Caso07_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 07 variant B
+[Lab_Caso07_B b7a067e] test: case 07 variant B
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso07_A -m merge: case 07 variant A
+Merge made by the 'ort' strategy.
+ Assets/02_Prefabs/Player.prefab | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[exit=0]
+
+$ git merge --no-ff Lab_Caso07_B -m merge: case 07 variant B
+Auto-merging Assets/02_Prefabs/Player.prefab
+CONFLICT (content): Merge conflict in Assets/02_Prefabs/Player.prefab
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git diff --name-only --diff-filter=U
+Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   f38ca50 (HEAD -> Dev) merge: case 07 variant A
+|\  
+| * 1ae65a3 (Lab_Caso07_A) test: case 07 variant A
+|/  
+*   cfb1829 merge: resolve player movement conflict
+|\  
+| * 695a201 (Lab_Caso06_B) test: case 06 variant B
+* |   5d32c68 merge: case 06 variant A
+|\ \  
+| |/  
+|/|   
+| * 7a3ce71 (Lab_Caso06_A) test: case 06 variant A
+|/  
+* cf06cd7 (Feature_Puzzle, Feature_Animation) docs: define development branch
+[exit=0]

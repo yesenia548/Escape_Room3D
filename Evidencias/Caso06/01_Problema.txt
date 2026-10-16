@@ -1,0 +1,76 @@
+CASO 06 - Conflicto en script
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch Lab_Caso06_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso06_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso06_A
+Switched to branch 'Lab_Caso06_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 06 variant A
+[Lab_Caso06_A 7a3ce71] test: case 06 variant A
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Lab_Caso06_B
+Switched to branch 'Lab_Caso06_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 06 variant B
+[Lab_Caso06_B 695a201] test: case 06 variant B
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso06_A -m merge: case 06 variant A
+Merge made by the 'ort' strategy.
+ Assets/01_Scripts/Player/PlayerController.cs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git merge --no-ff Lab_Caso06_B -m merge: case 06 variant B
+Auto-merging Assets/01_Scripts/Player/PlayerController.cs
+CONFLICT (content): Merge conflict in Assets/01_Scripts/Player/PlayerController.cs
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git diff --name-only --diff-filter=U
+Assets/01_Scripts/Player/PlayerController.cs
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/01_Scripts/Player/PlayerController.cs
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   5d32c68 (HEAD -> Dev) merge: case 06 variant A
+|\  
+| * 7a3ce71 (Lab_Caso06_A) test: case 06 variant A
+|/  
+* cf06cd7 (Feature_Puzzle, Feature_Animation) docs: define development branch
+* 51866ae (main, Lab_Caso02_BaseMain) chore: initial Unity project
+[exit=0]

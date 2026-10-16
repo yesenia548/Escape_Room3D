@@ -13,7 +13,7 @@ public class PuzzleManager : MonoBehaviour, IInteractable
     }
     public bool ValidateCode(string code)
     {
-        if (code != correctCode) return false;
+        if (string.IsNullOrWhiteSpace(code) || code.Trim() != correctCode) return false;
         Solved = true;
         chest.Unlock();
         GameManager.Instance.ShowMessage("Codigo correcto. El cofre esta desbloqueado.");

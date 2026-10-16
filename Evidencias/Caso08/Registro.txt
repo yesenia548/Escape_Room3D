@@ -1,0 +1,125 @@
+CASO 08 - Conflicto en escena
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch Lab_Caso08_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso08_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso08_A
+Switched to branch 'Lab_Caso08_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 08 variant A
+[Lab_Caso08_A f815c46] test: case 08 variant A
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Lab_Caso08_B
+Switched to branch 'Lab_Caso08_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: case 08 variant B
+[Lab_Caso08_B 149c737] test: case 08 variant B
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git merge --no-ff Lab_Caso08_A -m merge: case 08 variant A
+Merge made by the 'ort' strategy.
+ Assets/00_Scenes/MainScene.unity | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git merge --no-ff Lab_Caso08_B -m merge: case 08 variant B
+Auto-merging Assets/00_Scenes/MainScene.unity
+CONFLICT (content): Merge conflict in Assets/00_Scenes/MainScene.unity
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git diff --name-only --diff-filter=U
+Assets/00_Scenes/MainScene.unity
+[exit=0]
+
+$ git status --short --branch
+## Dev
+UU Assets/00_Scenes/MainScene.unity
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   b6daca1 (HEAD -> Dev) merge: case 08 variant A
+|\  
+| * f815c46 (Lab_Caso08_A) test: case 08 variant A
+|/  
+*   95d4734 merge: preserve player prefab references
+|\  
+| * b7a067e (Lab_Caso07_B) test: case 07 variant B
+* |   f38ca50 merge: case 07 variant A
+|\ \  
+| |/  
+|/|   
+| * 1ae65a3 (Lab_Caso07_A) test: case 07 variant A
+|/  
+*   cfb1829 merge: resolve player movement conflict
+|\
+[exit=0]
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: preserve chest and door in scene
+[Dev 4ac55fb] merge: preserve chest and door in scene
+[exit=0]
+
+$ git grep -n m_Name: Chest\|m_Name: Door -- Assets/00_Scenes/MainScene.unity
+Assets/00_Scenes/MainScene.unity:135:  m_Name: DoorLeaf
+Assets/00_Scenes/MainScene.unity:1960:  m_Name: Door
+Assets/00_Scenes/MainScene.unity:2546:  m_Name: Chest
+Assets/00_Scenes/MainScene.unity:3007:  m_Name: DoorHinge
+Assets/00_Scenes/MainScene.unity:3997:  m_Name: DoorTop
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   4ac55fb (HEAD -> Dev) merge: preserve chest and door in scene
+|\  
+| * 149c737 (Lab_Caso08_B) test: case 08 variant B
+* |   b6daca1 merge: case 08 variant A
+|\ \  
+| |/  
+|/|   
+| * f815c46 (Lab_Caso08_A) test: case 08 variant A
+|/  
+*   95d4734 merge: preserve player prefab references
+|\  
+| * b7a067e (Lab_Caso07_B) test: case 07 variant B
+* |   f38ca50 merge: case 07 variant A
+|\ \  
+| |/  
+|/|
+[exit=0]

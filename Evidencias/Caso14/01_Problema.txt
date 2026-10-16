@@ -1,0 +1,72 @@
+CASO 14 - Feature desactualizada
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch -f Feature_Puzzle Dev
+
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: record development update A
+[Dev d601c0f] docs: record development update A
+ 1 file changed, 1 insertion(+)
+ create mode 100644 LAB_CAMBIO_A.md
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: record development update B
+[Dev 8bb227a] docs: record development update B
+ 1 file changed, 1 insertion(+)
+ create mode 100644 LAB_CAMBIO_B.md
+[exit=0]
+
+$ git switch Feature_Puzzle
+Switched to branch 'Feature_Puzzle'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: record puzzle feature work
+[Feature_Puzzle 18ff7d2] docs: record puzzle feature work
+ 1 file changed, 1 insertion(+)
+ create mode 100644 LAB_PUZZLE.md
+[exit=0]
+
+$ git log --all --graph --oneline --decorate -12
+* 8bb227a (Dev) docs: record development update B
+* d601c0f docs: record development update A
+| * 18ff7d2 (HEAD -> Feature_Puzzle) docs: record puzzle feature work
+|/  
+* 6f783b3 chore: fix ignored files
+* 44c8c9e test: track generated laboratory file
+* eeebe72 fix: remove unrelated test file
+* 49d8595 feat: update player and docs
+*   66515c4 merge: preserve both project labels
+|\  
+| * c0f1229 (Lab_Caso11_B) chore: set game product name
+* |   02e97ed merge: project company label
+|\ \  
+| |/  
+|/|   
+| * 05bbe2c (Lab_Caso11_A) chore: set team project label
+|/  
+*   4fd6b41 merge: retain coherent puzzle validation
+|\
+[exit=0]
+
+$ git merge-base --is-ancestor Dev HEAD
+
+[exit=1]

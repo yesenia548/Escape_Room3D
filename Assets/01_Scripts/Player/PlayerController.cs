@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 4f;
+    public float speed = 5f;
     public Transform view;
     float pitch;
     float fall;
@@ -38,3 +38,5 @@ public class PlayerController : MonoBehaviour
     }
     void OnDisable() { Cursor.lockState = CursorLockMode.None; Cursor.visible = true; }
 }
+
+// Movimiento documentado en laboratorio.

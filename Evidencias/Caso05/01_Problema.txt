@@ -1,0 +1,24 @@
+CASO 05 - Push rechazado - remoto LOCAL
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git init --bare C:\Users\win\Documents\Codex\2026-10-15\ho\work\LaboratorioRemoto.git
+Initialized empty Git repository in C:/Users/win/Documents/Codex/2026-10-15/ho/work/LaboratorioRemoto.git/
+[exit=0]
+
+$ git remote add LabRemote C:\Users\win\Documents\Codex\2026-10-15\ho\work\LaboratorioRemoto.git
+
+[exit=0]
+
+$ git push -u LabRemote Dev
+      0 [main] sh (26112) C:\Program Files\Git\usr\bin\sh.exe: *** fatal error - NtCreateDirectoryObject(\BaseNamedObjects\msys-2.0S5-1888ae32e00d56aa): 0xC0000022
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[exit=128]

@@ -1,0 +1,25 @@
+CASO 19 - Cherry-pick
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git log -3 --oneline
+b2e1838 docs: record puzzle work in progress
+3f0fc31 fix: correct puzzle validation
+d82622d docs: add puzzle feature roadmap
+[exit=0]
+
+$ git cherry-pick 3f0fc3179239a2b00e0c2b229bfb41ca5d5ca072
+[Dev de06f72] fix: correct puzzle validation
+ Date: Thu Oct 15 13:22:09 2026 -0400
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git show --stat --oneline HEAD
+de06f72 fix: correct puzzle validation
+ Assets/01_Scripts/Puzzle/PuzzleManager.cs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+VERIFICADO: se aplico solo el fix. Los otros dos commits no se integraron.
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

@@ -1,0 +1,47 @@
+CASO 02 - Ramas Dev y Feature
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch main
+Already on 'main'
+[exit=0]
+
+$ git switch -c Dev
+Switched to a new branch 'Dev'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m docs: define development branch
+[Dev cf06cd7] docs: define development branch
+ 1 file changed, 4 insertions(+)
+ create mode 100644 LAB_NOTAS.md
+[exit=0]
+
+$ git branch Feature_PlayerMovement Dev
+
+[exit=0]
+
+$ git branch Feature_Interaction Dev
+
+[exit=0]
+
+$ git branch Feature_Puzzle Dev
+
+[exit=0]
+
+$ git branch Feature_Animation main
+
+[exit=0]
+
+$ git log --all --graph --oneline --decorate -8
+* cf06cd7 (HEAD -> Dev, Feature_Puzzle, Feature_PlayerMovement, Feature_Interaction) docs: define development branch
+* 51866ae (main, Feature_Animation) chore: initial Unity project
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Animation
+
+[exit=1]

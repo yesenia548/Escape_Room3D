@@ -1,0 +1,23 @@
+CASO 09 - Delete/Modify
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git merge Lab_Caso09_B
+CONFLICT (modify/delete): Assets/01_Scripts/Environment/OldDoorController.cs deleted in HEAD and modified in Lab_Caso09_B.  Version Lab_Caso09_B of Assets/01_Scripts/Environment/OldDoorController.cs left in tree.
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git status --short --branch
+## Dev
+DU Assets/01_Scripts/Environment/OldDoorController.cs
+[exit=0]
+
+$ git grep -n OldDoorController
+[exit=1]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

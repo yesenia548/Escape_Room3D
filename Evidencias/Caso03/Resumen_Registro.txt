@@ -1,0 +1,22 @@
+CASO 03 - Commit en rama equivocada
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log Dev -1 --oneline
+cf06cd7 docs: define development branch
+[exit=0]
+
+$ git log Feature_PlayerMovement -1 --oneline
+e626539 feat: add player movement
+[exit=0]
+
+$ git status --short --branch
+## Feature_PlayerMovement
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

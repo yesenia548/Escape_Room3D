@@ -3,10 +3,10 @@
 Laboratorio Git + GitHub + Visual Studio Code + Unity.
 
 ## Equipo
-- Yesenia (GitHub: yesenia548; nombre completo por confirmar).
-- Alejandro (usuario de GitHub pendiente).
-- Lucas (usuario de GitHub pendiente).
-- Alex (usuario de GitHub pendiente).
+- Yesenia Condori   
+- Alejandro Terceros
+- Lucas 
+- Alex 
 
 ## Version
 Unity 6000.5.5f1, plantilla Universal 3D.
@@ -34,8 +34,10 @@ Explorar una habitacion, encontrar la pista, resolver un codigo, abrir un cofre,
 Haz clic en Game para capturar el cursor. WASD mueve, el mouse gira la vista, E interactua y Esc libera el cursor. Lee la pista del escritorio, introduce 1234 en el panel, abre el cofre, recoge la llave, abre la puerta y cruza el umbral. La pantalla final permite reiniciar.
 
 ## Estado
-Assets generados y compilados en Unity. MainScene ejecutada en Play. Prueba automatizada de estados: 11 comprobaciones PASS, incluida la salida. Prueba manual de teclado, mouse y raycast pendiente. Casos Git pendientes. No hay repositorio remoto conectado todavia.
+Assets generados y compilados en Unity. MainScene ejecutada en Play. Prueba automatizada de estados: 13 comprobaciones PASS. Prueba manual de teclado, mouse y raycast pendiente. Evidencias Git parciales: faltan pasos colaborativos y Pull Requests. Repositorio: https://github.com/yesenia548/Escape_Room3D. Rama de entrega: yesenia.
 
 ## Evidencias
 Registrar problema, proceso, solucion y prueba real para cada caso. No marcar como finalizado un caso sin su punto de control.
 
+
+Movimiento documentado durante caso 12.

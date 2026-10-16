@@ -1,0 +1,21 @@
+CASO 07 - Conflicto en prefab
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git merge --no-ff Lab_Caso07_B -m merge: case 07 variant B
+Auto-merging Assets/02_Prefabs/Player.prefab
+CONFLICT (content): Merge conflict in Assets/02_Prefabs/Player.prefab
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git status --short --branch
+## Dev
+UU Assets/02_Prefabs/Player.prefab
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

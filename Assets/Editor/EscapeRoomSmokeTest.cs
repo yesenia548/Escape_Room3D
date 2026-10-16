@@ -44,6 +44,7 @@ public static class EscapeRoomSmokeTest
             if (phase == 1)
             {
                 Check(game != null && game.puzzle != null, "Referencias iniciales");
+                Check(game.InitializationCount == 1, "Initialize se ejecuta exactamente una vez");
                 var chest = game.puzzle.chest;
                 Check(!game.HasKey && !game.Escaped && !chest.unlocked && !chest.key.activeSelf, "Estado inicial bloqueado");
                 chest.Interact();
@@ -56,7 +57,8 @@ public static class EscapeRoomSmokeTest
                 var door = UnityEngine.Object.FindAnyObjectByType<DoorController>();
                 Check(Quaternion.Angle(door.hinge.localRotation, Quaternion.identity) < .1f, "Puerta rechaza apertura sin llave");
                 Check(!game.puzzle.ValidateCode("0000") && !game.puzzle.chest.unlocked, "Codigo incorrecto rechazado");
-                Check(game.puzzle.ValidateCode("1234") && game.puzzle.chest.unlocked, "Codigo correcto desbloquea cofre");
+                Check(!game.puzzle.ValidateCode(null), "Codigo null rechazado sin excepcion");
+                Check(game.puzzle.ValidateCode(" 1234 ") && game.puzzle.chest.unlocked, "Codigo valido con espacios aceptado");
                 game.puzzle.chest.Interact();
                 Check(game.puzzle.chest.opened && game.puzzle.chest.key.activeSelf, "Cofre abierto revela llave");
                 game.puzzle.chest.key.GetComponent<KeyItem>().Interact();
@@ -92,4 +94,5 @@ public static class EscapeRoomSmokeTest
         EditorApplication.isPlaying = false;
     }
 }
+
 

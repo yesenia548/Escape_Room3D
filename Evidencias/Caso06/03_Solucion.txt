@@ -1,0 +1,30 @@
+CASO 06 - Conflicto en script
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== FINISH ===
+$ git add -A
+
+[exit=0]
+
+$ git commit -m merge: resolve player movement conflict
+[Dev cfb1829] merge: resolve player movement conflict
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+*   cfb1829 (HEAD -> Dev) merge: resolve player movement conflict
+|\  
+| * 695a201 (Lab_Caso06_B) test: case 06 variant B
+* |   5d32c68 merge: case 06 variant A
+|\ \  
+| |/  
+|/|   
+| * 7a3ce71 (Lab_Caso06_A) test: case 06 variant A
+|/  
+* cf06cd7 (Feature_Puzzle, Feature_Animation) docs: define development branch
+* 51866ae (main, Lab_Caso02_BaseMain) chore: initial Unity project
+[exit=0]

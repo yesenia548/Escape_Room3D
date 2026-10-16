@@ -1,0 +1,78 @@
+CASO 11 - Diff de ProjectSettings
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git branch Lab_Caso11_A Dev
+
+[exit=0]
+
+$ git branch Lab_Caso11_B Dev
+
+[exit=0]
+
+$ git switch Lab_Caso11_A
+Switched to branch 'Lab_Caso11_A'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m chore: set team project label
+[Lab_Caso11_A 05bbe2c] chore: set team project label
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Lab_Caso11_B
+Switched to branch 'Lab_Caso11_B'
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m chore: set game product name
+[Lab_Caso11_B c0f1229] chore: set game product name
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]
+
+$ git diff Dev..Lab_Caso11_A -- ProjectSettings/ProjectSettings.asset
+diff --git a/ProjectSettings/ProjectSettings.asset b/ProjectSettings/ProjectSettings.asset
+index 37fe520..4ab0651 100644
+--- a/ProjectSettings/ProjectSettings.asset
++++ b/ProjectSettings/ProjectSettings.asset
+@@ -12,7 +12,7 @@ PlayerSettings:
+   targetDevice: 2
+   useOnDemandResources: 0
+   accelerometerFrequency: 60
+-  companyName: DefaultCompany
++  companyName: Equipo Escape Room
+   productName: EscapeRoom3D
+   defaultCursor: {fileID: 0}
+   cursorHotspot: {x: 0, y: 0}
+[exit=0]
+
+$ git diff Dev..Lab_Caso11_B -- ProjectSettings/ProjectSettings.asset
+diff --git a/ProjectSettings/ProjectSettings.asset b/ProjectSettings/ProjectSettings.asset
+index 37fe520..41bb501 100644
+--- a/ProjectSettings/ProjectSettings.asset
++++ b/ProjectSettings/ProjectSettings.asset
+@@ -13,7 +13,7 @@ PlayerSettings:
+   useOnDemandResources: 0
+   accelerometerFrequency: 60
+   companyName: DefaultCompany
+-  productName: EscapeRoom3D
++  productName: Escape Room 3D
+   defaultCursor: {fileID: 0}
+   cursorHotspot: {x: 0, y: 0}
+   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+[exit=0]

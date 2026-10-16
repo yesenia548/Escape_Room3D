@@ -1,0 +1,100 @@
+CASO 18 - Recuperacion por reflog
+EJERCICIO LOCAL REAL. Operaciones CLI; no atribuidas a companeros.
+No acredita pasos de GitHub, revision o participacion colaborativa.
+
+=== BEGIN ===
+$ git switch Dev
+Already on 'Dev'
+[exit=0]
+
+$ git switch --detach Dev
+HEAD is now at ffc9b01 Revert "test: introduce door regression"
+[exit=0]
+
+$ git add -A
+
+[exit=0]
+
+$ git commit -m test: recovery point
+[detached HEAD 6127197] test: recovery point
+ 1 file changed, 1 insertion(+)
+ create mode 100644 RECOVERY_TEST.md
+[exit=0]
+
+$ git rev-parse HEAD
+6127197eac72923cadac202cfc3e073e99eeb761
+[exit=0]
+
+$ git switch Dev
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  6127197 test: recovery point
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 6127197
+
+Switched to branch 'Dev'
+[exit=0]
+
+$ git log -3 --oneline
+ffc9b01 Revert "test: introduce door regression"
+ca7b429 test: introduce door regression
+1f7859a fix: initialize game only once
+[exit=0]
+
+Commit fuera del historial visible de Dev: 6127197eac72923cadac202cfc3e073e99eeb761
+
+=== FINISH ===
+$ git reflog -10 --format=%h %gs
+ffc9b01 checkout: moving from 6127197eac72923cadac202cfc3e073e99eeb761 to Dev
+6127197 commit: test: recovery point
+ffc9b01 checkout: moving from Dev to Dev
+ffc9b01 checkout: moving from Dev to Dev
+ffc9b01 revert: Revert "test: introduce door regression"
+ca7b429 commit: test: introduce door regression
+1f7859a checkout: moving from Dev to Dev
+1f7859a commit: fix: initialize game only once
+a7b66be commit (merge): test: reproduce duplicate initialization
+c7b6ecd merge Lab_Caso16_A: Merge made by the 'ort' strategy.
+[exit=0]
+
+$ git branch Lab_Recovery 6127197eac72923cadac202cfc3e073e99eeb761
+
+[exit=0]
+
+$ git switch Lab_Recovery
+Switched to branch 'Lab_Recovery'
+[exit=0]
+
+$ git show HEAD:RECOVERY_TEST.md
+# Punto recuperable del laboratorio
+[exit=0]
+
+$ git rev-parse HEAD
+6127197eac72923cadac202cfc3e073e99eeb761
+[exit=0]
+
+$ git status --short --branch
+## Lab_Recovery
+[exit=0]
+
+$ git log --graph --oneline --decorate -7
+* 6127197 (HEAD -> Lab_Recovery) test: recovery point
+* ffc9b01 (Dev) Revert "test: introduce door regression"
+* ca7b429 test: introduce door regression
+* 1f7859a fix: initialize game only once
+*   a7b66be test: reproduce duplicate initialization
+|\  
+| * 17a4d79 (Lab_Caso16_B) test: case 16 variant B
+* |   c7b6ecd merge: case 16 variant A
+|\ \  
+| |/  
+|/|
+[exit=0]
+
+$ git switch Dev
+Switched to branch 'Dev'
+[exit=0]

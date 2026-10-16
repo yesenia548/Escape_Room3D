@@ -1,0 +1,29 @@
+CASO 08 - Conflicto en escena
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git merge --no-ff Lab_Caso08_B -m merge: case 08 variant B
+Auto-merging Assets/00_Scenes/MainScene.unity
+CONFLICT (content): Merge conflict in Assets/00_Scenes/MainScene.unity
+Automatic merge failed; fix conflicts and then commit the result.
+[exit=1]
+
+$ git status --short --branch
+## Dev
+UU Assets/00_Scenes/MainScene.unity
+[exit=0]
+
+$ git grep -n m_Name: Chest\|m_Name: Door -- Assets/00_Scenes/MainScene.unity
+Assets/00_Scenes/MainScene.unity:135:  m_Name: DoorLeaf
+Assets/00_Scenes/MainScene.unity:1960:  m_Name: Door
+Assets/00_Scenes/MainScene.unity:2546:  m_Name: Chest
+Assets/00_Scenes/MainScene.unity:3007:  m_Name: DoorHinge
+Assets/00_Scenes/MainScene.unity:3997:  m_Name: DoorTop
+[exit=0]
+
+$ git status --short --branch
+## Dev
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

@@ -1,0 +1,23 @@
+CASO 02 - Dev y Features
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git log --all --graph --oneline --decorate -8
+* cf06cd7 (HEAD -> Dev, Feature_Puzzle, Feature_PlayerMovement, Feature_Interaction) docs: define development branch
+* 51866ae (main, Feature_Animation) chore: initial Unity project
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Animation
+[exit=1]
+
+$ git merge-base --is-ancestor Dev Feature_PlayerMovement
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Interaction
+[exit=0]
+
+$ git merge-base --is-ancestor Dev Feature_Puzzle
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.

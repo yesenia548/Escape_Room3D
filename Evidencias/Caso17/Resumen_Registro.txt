@@ -1,0 +1,36 @@
+CASO 17 - Revert
+REGISTRO REAL DE PRACTICA LOCAL (CLI). NO ES EVIDENCIA DE GITHUB.
+Estado: PARCIAL - practica local.
+
+$ git commit -m test: introduce door regression
+[Dev ca7b429] test: introduce door regression
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git push LabRemote Dev
+      0 [main] sh (40992) C:\Program Files\Git\usr\bin\sh.exe: *** fatal error - NtCreateDirectoryObject(\BaseNamedObjects\msys-2.0S5-1888ae32e00d56aa): 0xC0000022
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+[exit=128]
+
+$ git revert --no-edit ca7b429ec94382d8246587569eb34e015359fff3
+[Dev ffc9b01] Revert "test: introduce door regression"
+ Date: Thu Oct 15 13:22:06 2026 -0400
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[exit=0]
+
+$ git push LabRemote Dev
+      0 [main] sh (37960) C:\Program Files\Git\usr\bin\sh.exe: *** fatal error - NtCreateDirectoryObject(\BaseNamedObjects\msys-2.0S5-1888ae32e00d56aa): 0xC0000022
+fatal: Could not read from remote repository.
+Please make sure you have the correct access rights
+and the repository exists.
+[exit=128]
+
+$ git log -2 --oneline
+ffc9b01 Revert "test: introduce door regression"
+ca7b429 test: introduce door regression
+[exit=0]
+
+ALCANCE: demostracion local; participacion real y pasos remotos pendientes.
+Detalle y adaptaciones: LEEME.md. Registro completo: Registro.txt.
